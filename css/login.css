@@ -1,0 +1,19 @@
+a{
+ background-color: rgba(240, 248, 255, 0.534);
+
+ 
+}
+body{
+background-color: rgba(53, 141, 2, 0.603);
+
+}
+form{
+margin-top: 60%;
+background-color: rgb(202, 202, 202);
+padding: 100px 100px 50px 50px;
+border-radius: 100px;
+}
+h1{
+    color: rgb(51, 43, 43);
+    justify-content: center;
+}
