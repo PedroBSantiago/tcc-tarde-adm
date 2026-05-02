@@ -1,5 +1,5 @@
 a{
- background-color: rgba(240, 248, 255, 0.534);
+ background-color: rgba(41, 218, 18, 0.534);
 
  
 }
@@ -8,12 +8,22 @@ background-color: rgba(53, 141, 2, 0.603);
 
 }
 form{
-margin-top: 60%;
+margin-top: 10%;
 background-color: rgb(202, 202, 202);
 padding: 100px 100px 50px 50px;
 border-radius: 100px;
 }
 h1{
-    color: rgb(51, 43, 43);
+    color: rgb(26, 23, 23);
     justify-content: center;
 }
+.botaoquemostra {
+        position: absolute;
+        right: 230px;
+        top: 68%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        background: none;
+        border: 3px;
+        font-size: 16px;
+    }

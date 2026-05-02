@@ -7,7 +7,7 @@ $email = $_POST['email'];
 
 include 'conexao.php';
 
-$insert = "INSERT INTO tb_user VALUE (NULL, '$nome', '$email', '$senha')";
+$insert = "INSERT INTO tb_user VALUE (NULL, '$nm_user', '$nm_email', '$nr_senha')";
 
 $query = $conecta->query($insert);
 

@@ -2,7 +2,7 @@
 
  $server = "localhost";
  $user = "root";
- $password = "";
+ $password = "root";
  $database = "db_explorarmais";
 
 $conecta = new mysqli($server, $user, $password, $database);
