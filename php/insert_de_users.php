@@ -1,8 +1,8 @@
 <?php
 
-$nome = $_POST['name'];
-$senha = $_POST['password'];
-$email = $_POST['email'];
+$nm_user = $_POST['nome'];
+$nr_senha = $_POST['password'];
+$nm_email = $_POST['email'];
 
 
 include 'conexao.php';
@@ -20,6 +20,6 @@ $query = $conecta->query($insert);
 
 if ($query == true) {
    
-    echo "<script>alert('cadastrado com sucesso'); window.location.href = 'login.html'; </script>";
+    echo "<script>alert('cadastrado com sucesso'); window.location.href = '../html/login.html'; </script>";
 
 }
