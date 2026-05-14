@@ -1,29 +1,60 @@
-a{
- background-color: rgba(41, 218, 18, 0.534);
 
- 
+  a {
+    background-color: rgba(41, 218, 18, 0.534);
 }
-body{
-background-color: rgba(53, 141, 2, 0.603);
 
+body {
+    background-color: rgba(53, 141, 2, 0.603);
+    font-family: sans-serif; 
+    
+     background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.411)),
+    url("https://images.pexels.com/photos/18171958/pexels-photo-18171958.jpeg");
+    background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+    color: #fff;
 }
-form{
-margin-top: 10%;
-background-color: rgb(202, 202, 202);
-padding: 100px 100px 50px 50px;
-border-radius: 100px;
+
+form {
+    margin: 10% auto 0 auto; 
+    max-width: 500px;       
+    width: 90%;              
+    background-color: rgb(202, 202, 202);
+    padding: 40px;         
+    border-radius: 30px;     
+    box-sizing: border-box;  
 }
-h1{
+
+h1 {
     color: rgb(26, 23, 23);
-    justify-content: center;
+    text-align: center;     
+    margin-bottom: 20px;  
 }
+
+.campo-senha-container {
+    position: relative;
+    width: 100%; 
+    margin-bottom: 15px;     
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 40px 10px 10px; 
+    border: 1px solid #c5e2d0;
+    border-radius: 5px;
+    box-sizing: border-box;  
+}
+
 .botaoquemostra {
-        position: absolute;
-        right: 230px;
-        top: 68%;
-        transform: translateY(-50%);
-        cursor: pointer;
-        background: none;
-        border: 3px;
-        font-size: 16px;
-    }
+    position: absolute;
+    right: 12px;        
+    top: 50%;           
+    transform: translateY(-50%); 
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0;            
+}
