@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore os destinos exclusivos da Explorar +: Brotas, São Roque e Campos do Jordão. Ecoturismo, rota do vinho e charme serrano em São Paulo." />
+    <title>Destinos Exclusivos - Explorar +</title>
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/destinos.css" />
+</head>
+
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar-explorar">
+        <a href="index.html" class="nav-logo">
+            <div class="logo-icon">✈</div>
+            <span>Explorar +</span>
+        </a>
+        <div class="nav-menu">
+            <a href="index.html">Início</a>
+            <a href="destinos.html" class="active">Destinos</a>
+            <a href="pacotes.html">Pacotes</a>
+            <a href="agendamentos.html">Agendamentos</a>
+            <a href="questionario.html">Quiz</a>
+            <a href="pontuacao.html">Fidelidade</a>
+            <a href="usuario.html" class="nav-btn-outline">👤 Minha Conta</a>
+        </div>
+        <div class="nav-hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <main class="page-wrapper">
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="page-hero-bg">
+                <div class="page-hero-overlay"></div>
+            </div>
+            <div class="container-custom">
+                <div class="page-hero-content fade-up">
+                    <div class="section-tag">Nossos Destinos Oficiais</div>
+                    <h1 class="section-title">O melhor de São Paulo:<br /><span class="highlight">Brotas, São Roque e Campos do Jordão</span></h1>
+                    <p class="section-subtitle">Três experiências singulares selecionadas minuciosamente: a adrenalina da aventura, o requinte dos vinhedos e o charme do clima alpino.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filters & Search -->
+        <section class="filters-section">
+            <div class="container-custom">
+                <div class="filters-bar glass-card fade-up">
+                    <div class="filter-group">
+                        <button class="filter-btn active" data-filter="todos">🌍 Todos (3)</button>
+                        <button class="filter-btn" data-filter="aventura">🧗 Aventura & Ecoturismo</button>
+                        <button class="filter-btn" data-filter="enoturismo">🍷 Rota do Vinho</button>
+                        <button class="filter-btn" data-filter="serra">🏔️ Serra & Romântico</button>
+                    </div>
+                    <div class="search-box">
+                        <input type="text" id="searchDestino" placeholder="Buscar Brotas, São Roque, Campos..." />
+                        <span class="search-icon">🔍</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Destinations Grid (ONLY Brotas, São Roque, Campos do Jordão) -->
+        <section class="destinos-section">
+            <div class="container-custom">
+                <div class="destinos-grid" id="destinosGrid">
+                    
+                    <!-- Destino 1: BROTAS -->
+                    <div class="destino-card fade-up" data-category="aventura">
+                        <div class="destino-img">
+                            <img src="https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Brotas - Aventura e Natureza" loading="lazy" />
+                            <span class="badge-custom badge-aventura">Aventura & Ecoturismo</span>
+                            <div class="destino-fav" title="Favoritar">♥</div>
+                        </div>
+                        <div class="destino-info">
+                            <div class="destino-location">📍 Brotas, SP - Brasil</div>
+                            <h3>Brotas</h3>
+                            <p class="dest-slogan">Capital Nacional da Aventura e do Ecoturismo</p>
+                            <p>Famosa por suas mais de 30 cachoeiras abertas à visitação, rafting desafiador no Rio Jacaré-Pepira, tirolesas panorâmicas e a famosa nascente Areia que Canta. O refúgio perfeito para recarregar as energias em meio à natureza preservada.</p>
+                            
+                            <div class="dest-tags-pills">
+                                <span>🌊 Rafting</span>
+                                <span>🌿 Cachoeiras</span>
+                                <span>🪂 Tirolesa</span>
+                                <span>🛶 Ecoturismo</span>
+                            </div>
+
+                            <div class="destino-meta">
+                                <div class="destino-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>4.9 (1.280 avaliações)</span>
+                                </div>
+                                <div class="destino-price">
+                                    <small>A partir de</small>
+                                    <strong>R$ 890</strong>
+                                </div>
+                            </div>
+                            <div class="destino-actions">
+                                <a href="pacotes.html#brotas" class="btn-secondary-custom btn-sm">Ver Pacotes</a>
+                                <a href="agendamentos.html?destino=Brotas" class="btn-primary-custom btn-sm">Reservar Agora →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Destino 2: SÃO ROQUE -->
+                    <div class="destino-card fade-up" data-category="enoturismo">
+                        <div class="destino-img">
+                            <img src="https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?auto=compress&cs=tinysrgb&w=800" alt="São Roque - Rota do Vinho" loading="lazy" />
+                            <span class="badge-custom badge-enoturismo">Rota do Vinho</span>
+                            <div class="destino-fav" title="Favoritar">♥</div>
+                        </div>
+                        <div class="destino-info">
+                            <div class="destino-location">📍 São Roque, SP - Brasil</div>
+                            <h3>São Roque</h3>
+                            <p class="dest-slogan">A Rota do Vinho, Gastronomia e Charme Rural</p>
+                            <p>A apenas 60 km da capital paulista, a histórica Estrada do Vinho convida você a vivenciar degustações guiadas de vinhos e espumantes artesanais, almoços harmonizados da culinária ítalo-portuguesa e pousadas de charme rodeadas por vinhedos.</p>
+                            
+                            <div class="dest-tags-pills">
+                                <span>🍷 Vinícolas</span>
+                                <span>🍇 Degustações</span>
+                                <span>🍝 Alta Gastronomia</span>
+                                <span>🌾 Tranquilidade</span>
+                            </div>
+
+                            <div class="destino-meta">
+                                <div class="destino-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>4.8 (980 avaliações)</span>
+                                </div>
+                                <div class="destino-price">
+                                    <small>A partir de</small>
+                                    <strong>R$ 650</strong>
+                                </div>
+                            </div>
+                            <div class="destino-actions">
+                                <a href="pacotes.html#saoroque" class="btn-secondary-custom btn-sm">Ver Pacotes</a>
+                                <a href="agendamentos.html?destino=SaoRoque" class="btn-primary-custom btn-sm">Reservar Agora →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Destino 3: CAMPOS DO JORDÃO -->
+                    <div class="destino-card fade-up" data-category="serra">
+                        <div class="destino-img">
+                            <img src="https://images.pexels.com/photos/1486974/pexels-photo-1486974.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Campos do Jordão - Serra da Mantiqueira" loading="lazy" />
+                            <span class="badge-custom badge-serra">Serra & Romântico</span>
+                            <div class="destino-fav" title="Favoritar">♥</div>
+                        </div>
+                        <div class="destino-info">
+                            <div class="destino-location">📍 Campos do Jordão, SP - Brasil</div>
+                            <h3>Campos do Jordão</h3>
+                            <p class="dest-slogan">A Suíça Brasileira no Alto da Mantiqueira</p>
+                            <p>Situada a 1.628 metros de altitude, encanta por sua arquitetura alpina européia, clima frio de montanha, tradicionais noites de fondue ao lado da lareira, cervejarias artesanais, teleférico do Parque Capivari e pores do sol magníficos no Pico do Itapeva.</p>
+                            
+                            <div class="dest-tags-pills">
+                                <span>🫕 Noite do Fondue</span>
+                                <span>🍫 Chocolates Finos</span>
+                                <span>🚠 Teleférico</span>
+                                <span>❄️ Clima Europeu</span>
+                            </div>
+
+                            <div class="destino-meta">
+                                <div class="destino-rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span>4.9 (2.420 avaliações)</span>
+                                </div>
+                                <div class="destino-price">
+                                    <small>A partir de</small>
+                                    <strong>R$ 1.150</strong>
+                                </div>
+                            </div>
+                            <div class="destino-actions">
+                                <a href="pacotes.html#camposdojordao" class="btn-secondary-custom btn-sm">Ver Pacotes</a>
+                                <a href="agendamentos.html?destino=CamposDoJordao" class="btn-primary-custom btn-sm">Reservar Agora →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Empty state if search finds nothing -->
+                <div class="empty-state glass-card" id="emptyState" style="display: none; text-align: center; padding: 3rem;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
+                    <h3>Nenhum destino encontrado</h3>
+                    <p style="color: var(--text-secondary);">Tente buscar por <strong>Brotas</strong>, <strong>São Roque</strong> ou <strong>Campos do Jordão</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Destination Comparison Table -->
+        <section class="dest-compare-section">
+            <div class="container-custom">
+                <div class="section-header fade-up">
+                    <div class="section-tag">Guia de Escolha</div>
+                    <h2 class="section-title">Qual destino combina mais com <span class="highlight">você?</span></h2>
+                    <p class="section-subtitle">Compare rapidamente as particularidades de cada destino antes de fazer as malas</p>
+                </div>
+
+                <div class="compare-table-wrap glass-card fade-up">
+                    <table class="compare-table">
+                        <thead>
+                            <tr>
+                                <th>Destino</th>
+                                <th>Estilo de Viagem</th>
+                                <th>Clima Típico</th>
+                                <th>Distância de SP</th>
+                                <th>Ideal Para</th>
+                                <th>Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Brotas</strong></td>
+                                <td>Aventura & Ecoturismo</td>
+                                <td>Agradável / Tropical</td>
+                                <td>~240 km</td>
+                                <td>Amigos, Família, Casais aventureiros</td>
+                                <td><a href="agendamentos.html?destino=Brotas" class="btn-primary-custom btn-xs">Reservar</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>São Roque</strong></td>
+                                <td>Enogastronomia & Charme</td>
+                                <td>Ameno / Campestre</td>
+                                <td>~60 km</td>
+                                <td>Casais, Apreciadores de Vinho, Família</td>
+                                <td><a href="agendamentos.html?destino=SaoRoque" class="btn-primary-custom btn-xs">Reservar</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Campos do Jordão</strong></td>
+                                <td>Romântico & Serra</td>
+                                <td>Frio / Montanhoso</td>
+                                <td>~170 km</td>
+                                <td>Casais, Lua de mel, Férias de Inverno</td>
+                                <td><a href="agendamentos.html?destino=CamposDoJordao" class="btn-primary-custom btn-xs">Reservar</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz CTA -->
+        <section class="cta-section">
+            <div class="container-custom">
+                <div class="cta-content glass-card fade-up" style="text-align: center; padding: 3rem;">
+                    <h2>Ainda em dúvida entre Brotas, São Roque ou Campos do Jordão?</h2>
+                    <p style="margin: 1rem 0 2rem; color: var(--text-secondary);">Faça nosso quiz de perfil de viagem em apenas 1 minuto e descubra a recomendação exata para suas férias!</p>
+                    <a href="questionario.html" class="btn-primary-custom">🧭 Fazer o Quiz de Destinos →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-explorar">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">✈ <span>Explorar +</span></div>
+                <p>Especialistas em turismo de excelência no interior de SP: Brotas, São Roque e Campos do Jordão.</p>
+                <div class="footer-social"><a href="#">📷</a><a href="#">📘</a><a href="#">💬</a><a href="#">▶️</a></div>
+            </div>
+            <div class="footer-col"><h4>Navegação</h4><a href="index.html">Início</a><a href="destinos.html">Destinos</a><a href="pacotes.html">Pacotes</a><a href="agendamentos.html">Agendamentos</a><a href="questionario.html">Quiz</a></div>
+            <div class="footer-col"><h4>Suporte</h4><a href="#">Central de Ajuda</a><a href="#">Termos de Uso</a><a href="#">Privacidade</a></div>
+            <div class="footer-col"><h4>Contato</h4><a href="#">📍 São Paulo, SP</a><a href="#">📞 (11) 9 8765-4321</a><a href="#">✉️ contato@explorarmais.com.br</a></div>
+        </div>
+        <div class="footer-bottom"><span>© 2026 Explorar +. Todos os direitos reservados.</span><span>Feito com ❤️ para viajantes</span></div>
+    </footer>
+
+    <script src="../JS/main.js"></script>
+    <script src="../JS/destinos.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Área do Usuário | Explorar + - Gerencie suas viagens, consulte seu saldo de pontos e personalize sua experiência." />
+    <title>Área do Usuário - Explorar +</title>
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/usuario.css" />
+</head>
+
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar-explorar">
+        <a href="index.html" class="nav-logo">
+            <div class="logo-icon">✈</div>
+            <span>Explorar +</span>
+        </a>
+        <div class="nav-menu">
+            <a href="index.html">Início</a>
+            <a href="destinos.html">Destinos</a>
+            <a href="pacotes.html">Pacotes</a>
+            <a href="agendamentos.html">Agendamentos</a>
+            <a href="questionario.html">Quiz</a>
+            <a href="pontuacao.html">Fidelidade</a>
+            <a href="usuario.html" class="active nav-btn-outline">👤 Minha Conta</a>
+            <a href="../php/logout.php" class="nav-logout-btn">Sair</a>
+        </div>
+        <div class="nav-hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- Main Wrapper -->
+    <main class="user-dashboard-wrapper">
+        <div class="container-custom">
+            <!-- User Welcome Banner -->
+            <section class="user-welcome-card glass-card fade-up">
+                <div class="user-avatar-wrap">
+                    <div class="user-avatar" id="userAvatarText">VE</div>
+                    <div class="user-badge-level" id="userTierBadge">🥉 Bronze</div>
+                </div>
+                <div class="user-welcome-info">
+                    <span class="user-greeting-label">Bem-vindo(a) de volta,</span>
+                    <h1 class="user-greeting-name" id="userNameDisplay">Viajante Explorador</h1>
+                    <p class="user-email-display" id="userEmailDisplay">viajante@explorarmais.com.br</p>
+                </div>
+                <div class="user-quick-stats">
+                    <div class="quick-stat-box">
+                        <span class="quick-stat-title">Saldo Fidelidade</span>
+                        <div class="quick-stat-val"><span id="userPointsDisplay">3.850</span> <small>pts</small></div>
+                    </div>
+                    <div class="quick-stat-box">
+                        <span class="quick-stat-title">Viagens Marcadas</span>
+                        <div class="quick-stat-val" id="userTripsCount">2</div>
+                    </div>
+                    <a href="agendamentos.html" class="btn-primary-custom btn-sm">➕ Nova Reserva</a>
+                </div>
+            </section>
+
+            <!-- Dashboard Layout (Sidebar Tabs + Content Area) -->
+            <div class="dashboard-grid">
+                <!-- Navigation Tabs Sidebar -->
+                <aside class="dashboard-sidebar glass-card fade-up">
+                    <nav class="dash-tabs">
+                        <button class="dash-tab active" data-tab="visao-geral">
+                            <span class="dash-tab-icon">📊</span>
+                            <span>Visão Geral</span>
+                        </button>
+                        <button class="dash-tab" data-tab="viagens">
+                            <span class="dash-tab-icon">📅</span>
+                            <span>Minhas Viagens</span>
+                            <span class="tab-count-badge" id="tabViagensCount">2</span>
+                        </button>
+                        <button class="dash-tab" data-tab="fidelidade">
+                            <span class="dash-tab-icon">💎</span>
+                            <span>Pontos & Resgates</span>
+                        </button>
+                        <button class="dash-tab" data-tab="favoritos">
+                            <span class="dash-tab-icon">❤️</span>
+                            <span>Destinos Salvos</span>
+                        </button>
+                        <button class="dash-tab" data-tab="perfil">
+                            <span class="dash-tab-icon">⚙️</span>
+                            <span>Meus Dados</span>
+                        </button>
+                    </nav>
+                </aside>
+
+                <!-- Dashboard Content Panels -->
+                <div class="dashboard-main-content">
+                    
+                    <!-- TAB 1: VISÃO GERAL -->
+                    <section class="dash-panel active" id="tab-visao-geral">
+                        <div class="panel-header fade-up">
+                            <h2>Visão Geral do Viajante</h2>
+                            <p>Acompanhe seus próximos roteiros e benefícios exclusivos na Explorar +</p>
+                        </div>
+
+                        <!-- Highlights Cards -->
+                        <div class="overview-cards-grid">
+                            <div class="overview-card glass-card fade-up">
+                                <div class="overview-card-header">
+                                    <div class="ov-icon">📍</div>
+                                    <span class="ov-tag tag-destaque">Próxima Parada</span>
+                                </div>
+                                <h3 id="nextTripTitle">Brotas Aventura Radical</h3>
+                                <p class="ov-date">Partida em: <strong id="nextTripDate">14 de Novembro de 2026</strong></p>
+                                <div class="ov-footer">
+                                    <span class="status-pill status-confirmado">Confirmado</span>
+                                    <a href="agendamentos.html" class="link-details">Ver detalhes →</a>
+                                </div>
+                            </div>
+
+                            <div class="overview-card glass-card fade-up">
+                                <div class="overview-card-header">
+                                    <div class="ov-icon">⭐</div>
+                                    <span class="ov-tag">Nível do Clube</span>
+                                </div>
+                                <h3>Explorador Aventureiro</h3>
+                                <div class="tier-progress-wrap">
+                                    <div class="tier-progress-info">
+                                        <span>3.850 / 5.000 pts</span>
+                                        <span>77%</span>
+                                    </div>
+                                    <div class="tier-progress-bar">
+                                        <div class="tier-progress-fill" style="width: 77%;"></div>
+                                    </div>
+                                </div>
+                                <p class="tier-hint">Faltam <strong>1.150 pontos</strong> para o nível Desbravador e 10% OFF!</p>
+                            </div>
+
+                            <div class="overview-card glass-card fade-up">
+                                <div class="overview-card-header">
+                                    <div class="ov-icon">🧭</div>
+                                    <span class="ov-tag">Quiz Realizado</span>
+                                </div>
+                                <h3>Seu Destino Ideal</h3>
+                                <p class="ov-dest-match">Compatibilidade com: <strong class="highlight">Brotas (Ecoturismo)</strong></p>
+                                <a href="questionario.html" class="btn-secondary-custom btn-xs">Refazer Quiz</a>
+                            </div>
+                        </div>
+
+                        <!-- Próximas Viagens Preview -->
+                        <div class="panel-sub-section glass-card fade-up">
+                            <div class="section-flex-header">
+                                <h3>Suas Próximas Reservas</h3>
+                                <button class="btn-link" onclick="switchDashboardTab('viagens')">Ver todas as viagens →</button>
+                            </div>
+                            <div class="user-trips-list" id="overviewTripsContainer">
+                                <!-- Preenchido dinamicamente via JS -->
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- TAB 2: MINHAS VIAGENS -->
+                    <section class="dash-panel" id="tab-viagens">
+                        <div class="panel-header fade-up">
+                            <h2>Histórico de Viagens e Agendamentos</h2>
+                            <p>Todas as suas viagens reservadas para Brotas, São Roque e Campos do Jordão</p>
+                        </div>
+
+                        <div class="user-trips-list" id="allTripsContainer">
+                            <!-- Preenchido via JS com cards modernos -->
+                        </div>
+                    </section>
+
+                    <!-- TAB 3: PONTOS & RESGATES -->
+                    <section class="dash-panel" id="tab-fidelidade">
+                        <div class="panel-header fade-up">
+                            <h2>Explorar Points & Recompensas</h2>
+                            <p>Resgate seus pontos por experiências e vantagens inesquecíveis</p>
+                        </div>
+
+                        <div class="points-balance-banner glass-card fade-up">
+                            <div class="balance-left">
+                                <span class="balance-sub">Saldo Disponível para Resgate</span>
+                                <div class="balance-number"><span id="tabPointsBalance">3.850</span> <small>pontos</small></div>
+                                <p>Ganhe 1 ponto a cada R$ 1 em viagens agendadas para Brotas, São Roque ou Campos do Jordão.</p>
+                            </div>
+                            <div class="balance-right">
+                                <a href="pontuacao.html" class="btn-secondary-custom">Regras do Programa</a>
+                            </div>
+                        </div>
+
+                        <div class="rewards-redeem-grid fade-up">
+                            <div class="reward-box glass-card">
+                                <div class="rb-icon">🍽️</div>
+                                <h4>Jantar com Harmonização em São Roque</h4>
+                                <p>Sequência de pratos com vinhos artesanais na Rota do Vinho</p>
+                                <div class="rb-footer">
+                                    <span class="rb-cost">3.000 pts</span>
+                                    <button class="btn-primary-custom btn-xs" onclick="resgatarRecompensa('Jantar em São Roque', 3000)">Resgatar</button>
+                                </div>
+                            </div>
+
+                            <div class="reward-box glass-card">
+                                <div class="rb-icon">🛶</div>
+                                <h4>Passeio de Rafting em Brotas</h4>
+                                <p>Ingresso completo com guia especializado no Rio Jacaré-Pepira</p>
+                                <div class="rb-footer">
+                                    <span class="rb-cost">2.500 pts</span>
+                                    <button class="btn-primary-custom btn-xs" onclick="resgatarRecompensa('Rafting em Brotas', 2500)">Resgatar</button>
+                                </div>
+                            </div>
+
+                            <div class="reward-box glass-card">
+                                <div class="rb-icon">🫕</div>
+                                <h4>Rodízio de Fondue em Campos do Jordão</h4>
+                                <p>Fondue doce e salgado tradicional em restaurante suíço no Capivari</p>
+                                <div class="rb-footer">
+                                    <span class="rb-cost">3.500 pts</span>
+                                    <button class="btn-primary-custom btn-xs" onclick="resgatarRecompensa('Fondue em Campos do Jordão', 3500)">Resgatar</button>
+                                </div>
+                            </div>
+
+                            <div class="reward-box glass-card">
+                                <div class="rb-icon">🏨</div>
+                                <h4>Upgrade de Quarto com Hidro</h4>
+                                <p>Válido para pousadas parceiras nos 3 destinos exclusivos</p>
+                                <div class="rb-footer">
+                                    <span class="rb-cost">5.000 pts</span>
+                                    <button class="btn-secondary-custom btn-xs" onclick="resgatarRecompensa('Upgrade de Hospedagem', 5000)">Resgatar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Extrato de Pontuações -->
+                        <div class="extrato-pontos-wrap glass-card fade-up">
+                            <h3>Extrato Recente de Pontos</h3>
+                            <div class="extrato-table-wrap">
+                                <table class="extrato-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Data</th>
+                                            <th>Descrição</th>
+                                            <th>Tipo</th>
+                                            <th>Pontos</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="extratoTableBody">
+                                        <!-- Preenchido via JS -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- TAB 4: DESTINOS FAVORITOS -->
+                    <section class="dash-panel" id="tab-favoritos">
+                        <div class="panel-header fade-up">
+                            <h2>Seus Destinos Salvos</h2>
+                            <p>Acesse rapidamente os destinos imperdíveis de São Paulo</p>
+                        </div>
+
+                        <div class="destinos-favoritos-grid fade-up">
+                            <!-- Brotas Card -->
+                            <div class="fav-dest-card glass-card">
+                                <img src="https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Brotas" />
+                                <div class="fav-dest-body">
+                                    <span class="badge-custom badge-aventura">Aventura & Ecoturismo</span>
+                                    <h3>Brotas, SP</h3>
+                                    <p>Cachoeiras deslumbrantes, rafting radical e ar puro do interior.</p>
+                                    <div class="fav-dest-foot">
+                                        <span class="fav-price">A partir de R$ 890</span>
+                                        <a href="agendamentos.html?destino=Brotas" class="btn-primary-custom btn-xs">Reservar</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- São Roque Card -->
+                            <div class="fav-dest-card glass-card">
+                                <img src="https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?auto=compress&cs=tinysrgb&w=600" alt="São Roque" />
+                                <div class="fav-dest-body">
+                                    <span class="badge-custom badge-enoturismo">Rota do Vinho</span>
+                                    <h3>São Roque, SP</h3>
+                                    <p>Vinícolas renomadas, gastronomia artesanal e clima bucólico.</p>
+                                    <div class="fav-dest-foot">
+                                        <span class="fav-price">A partir de R$ 650</span>
+                                        <a href="agendamentos.html?destino=SaoRoque" class="btn-primary-custom btn-xs">Reservar</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Campos do Jordão Card -->
+                            <div class="fav-dest-card glass-card">
+                                <img src="https://images.pexels.com/photos/1486974/pexels-photo-1486974.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Campos do Jordão" />
+                                <div class="fav-dest-body">
+                                    <span class="badge-custom badge-serra">Serra & Romântico</span>
+                                    <h3>Campos do Jordão, SP</h3>
+                                    <p>A Suíça brasileira na Mantiqueira com fondues e chocolates finos.</p>
+                                    <div class="fav-dest-foot">
+                                        <span class="fav-price">A partir de R$ 1.150</span>
+                                        <a href="agendamentos.html?destino=CamposDoJordao" class="btn-primary-custom btn-xs">Reservar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- TAB 5: MEUS DADOS -->
+                    <section class="dash-panel" id="tab-perfil">
+                        <div class="panel-header fade-up">
+                            <h2>Meus Dados Cadastrais</h2>
+                            <p>Mantenha suas informações de contato atualizadas para suas viagens</p>
+                        </div>
+
+                        <div class="profile-form-wrap glass-card fade-up">
+                            <form id="profileForm">
+                                <div class="form-row-2">
+                                    <div class="form-group-custom">
+                                        <label for="profNome">Nome Completo</label>
+                                        <input type="text" id="profNome" value="Viajante Explorador" required />
+                                    </div>
+                                    <div class="form-group-custom">
+                                        <label for="profEmail">E-mail</label>
+                                        <input type="email" id="profEmail" value="viajante@explorarmais.com.br" required />
+                                    </div>
+                                </div>
+
+                                <div class="form-row-2">
+                                    <div class="form-group-custom">
+                                        <label for="profTelefone">WhatsApp / Telefone</label>
+                                        <input type="tel" id="profTelefone" value="(11) 98765-4321" />
+                                    </div>
+                                    <div class="form-group-custom">
+                                        <label for="profSenha">Alterar Senha</label>
+                                        <input type="password" id="profSenha" placeholder="Deixe em branco para manter a atual" />
+                                    </div>
+                                </div>
+
+                                <div class="form-actions-right">
+                                    <button type="submit" class="btn-primary-custom">Salvar Alterações</button>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de Voucher / Detalhes de Viagem -->
+    <div class="modal-overlay" id="tripModal">
+        <div class="modal-box glass-card">
+            <button class="modal-close" id="closeTripModal">&times;</button>
+            <div class="modal-content" id="tripModalContent">
+                <!-- Conteúdo do comprovante -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-explorar">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">✈ <span>Explorar +</span></div>
+                <p>Especialistas em experiências memoráveis em Brotas, São Roque e Campos do Jordão.</p>
+                <div class="footer-social"><a href="#">📷</a><a href="#">📘</a><a href="#">💬</a><a href="#">▶️</a></div>
+            </div>
+            <div class="footer-col"><h4>Navegação</h4><a href="index.html">Início</a><a href="destinos.html">Destinos</a><a href="pacotes.html">Pacotes</a><a href="agendamentos.html">Agendamentos</a><a href="questionario.html">Quiz</a></div>
+            <div class="footer-col"><h4>Suporte</h4><a href="#">Central de Ajuda</a><a href="#">Termos de Uso</a><a href="#">Privacidade</a></div>
+            <div class="footer-col"><h4>Contato</h4><a href="#">📍 São Paulo, SP</a><a href="#">📞 (11) 9 8765-4321</a><a href="#">✉️ contato@explorarmais.com.br</a></div>
+        </div>
+        <div class="footer-bottom"><span>© 2026 Explorar +. Todos os direitos reservados.</span><span>Feito com ❤️ para viajantes</span></div>
+    </footer>
+
+    <script src="../JS/main.js"></script>
+    <script src="../JS/usuario.js"></script>
+</body>
+
+</html>

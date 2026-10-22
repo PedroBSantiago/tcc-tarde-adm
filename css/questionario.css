@@ -1,0 +1,246 @@
+/* =========================================
+   EXPLORAR + | Quiz Page
+   ========================================= */
+
+.quiz-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 80px);
+    padding: 100px 0 4rem;
+}
+
+.quiz-container {
+    max-width: 700px;
+    width: 100%;
+}
+
+/* Intro */
+.quiz-intro {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.quiz-intro-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.quiz-intro .section-title {
+    margin-bottom: 1rem;
+}
+
+.quiz-intro .section-subtitle {
+    margin-bottom: 2.5rem;
+}
+
+/* Progress */
+.quiz-progress {
+    margin-bottom: 2rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: var(--bg-glass);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light), var(--accent));
+    border-radius: 3px;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 16.66%;
+}
+
+.progress-text {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* Questions */
+.quiz-question {
+    text-align: center;
+}
+
+.question-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.quiz-question h2 {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.option-card {
+    cursor: pointer;
+}
+
+.option-card input[type="radio"] {
+    display: none;
+}
+
+.option-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 1.5rem 1rem;
+    background: var(--bg-glass);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-smooth);
+}
+
+.option-card:hover .option-content {
+    border-color: var(--primary);
+    background: rgba(14, 138, 95, 0.06);
+    transform: translateY(-3px);
+}
+
+.option-card input:checked + .option-content {
+    border-color: var(--primary-light);
+    background: rgba(14, 138, 95, 0.12);
+    box-shadow: 0 0 25px var(--primary-glow);
+    transform: scale(1.02);
+}
+
+.option-emoji {
+    font-size: 2rem;
+}
+
+.option-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+/* Navigation */
+.quiz-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    gap: 16px;
+}
+
+.quiz-nav button:only-child {
+    margin-left: auto;
+}
+
+/* Result */
+.quiz-result {
+    padding: 2rem 0;
+}
+
+.result-card {
+    text-align: center;
+    padding: 3rem;
+}
+
+.result-confetti {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    animation: float 2s ease-in-out infinite;
+}
+
+.result-card h2 {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+}
+
+.result-destination {
+    margin-bottom: 2rem;
+}
+
+.result-dest-card {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    text-align: left;
+    padding: 1.5rem;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    margin-bottom: 1rem;
+}
+
+.result-dest-img {
+    width: 140px;
+    height: 100px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.result-dest-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.result-dest-info h3 {
+    font-family: var(--font-primary);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--primary-light);
+}
+
+.result-dest-info p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.result-dest-price {
+    margin-top: 6px;
+    font-family: var(--font-primary);
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.result-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .quiz-question h2 {
+        font-size: 1.3rem;
+    }
+
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .result-dest-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .result-dest-img {
+        width: 100%;
+        height: 150px;
+    }
+}

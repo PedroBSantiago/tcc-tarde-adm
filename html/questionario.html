@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Descubra se seu destino ideal é Brotas, São Roque ou Campos do Jordão com nosso quiz exclusivo de perfil de viajante." />
+    <title>Quiz de Destinos - Explorar +</title>
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/questionario.css" />
+</head>
+
+<body>
+    <div class="page-loader"><div class="loader-spinner"></div></div>
+
+    <!-- Navbar -->
+    <nav class="navbar-explorar">
+        <a href="index.html" class="nav-logo">
+            <div class="logo-icon">✈</div><span>Explorar +</span>
+        </a>
+        <div class="nav-menu">
+            <a href="index.html">Início</a>
+            <a href="destinos.html">Destinos</a>
+            <a href="pacotes.html">Pacotes</a>
+            <a href="agendamentos.html">Agendamentos</a>
+            <a href="questionario.html" class="active">Quiz</a>
+            <a href="pontuacao.html">Fidelidade</a>
+            <a href="usuario.html" class="nav-btn-outline">👤 Minha Conta</a>
+        </div>
+        <div class="nav-hamburger"><span></span><span></span><span></span></div>
+    </nav>
+
+    <main class="page-wrapper quiz-page">
+        <div class="quiz-container container-custom">
+            <!-- Intro -->
+            <div class="quiz-intro fade-up" id="quizIntro">
+                <div class="quiz-intro-icon">🧭</div>
+                <h1 class="section-title">Qual é o seu próximo destino?<br /><span class="highlight">Brotas, São Roque ou Campos do Jordão?</span></h1>
+                <p class="section-subtitle">Responda 6 perguntas rápidas sobre seu estilo de viagem e nosso algoritmo indicará a experiência perfeita para suas férias no interior paulista!</p>
+                <button class="btn-primary-custom" id="startQuiz">Começar Quiz de Destinos →</button>
+            </div>
+
+            <!-- Progress -->
+            <div class="quiz-progress" id="quizProgress" style="display: none;">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <span class="progress-text" id="progressText">Pergunta 1 de 6</span>
+            </div>
+
+            <!-- Questions -->
+            <div class="quiz-questions" id="quizQuestions" style="display: none;">
+                <!-- Q1: CLIMA -->
+                <div class="quiz-step" data-step="1">
+                    <div class="quiz-question fade-up">
+                        <div class="question-icon">🌤️</div>
+                        <h2>Qual clima você prefere para sua viagem?</h2>
+                        <div class="options-grid">
+                            <label class="option-card">
+                                <input type="radio" name="clima" value="calor_natureza" />
+                                <div class="option-content">
+                                    <span class="option-emoji">☀️</span>
+                                    <span class="option-text">Ensolarado para curtir rios e cachoeiras</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="clima" value="ameno_rural" />
+                                <div class="option-content">
+                                    <span class="option-emoji">🌾</span>
+                                    <span class="option-text">Clima ameno e agradável de campo/vinhedos</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="clima" value="frio_serra" />
+                                <div class="option-content">
+                                    <span class="option-emoji">❄️</span>
+                                    <span class="option-text">Frio serrano de montanha com lareira</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="clima" value="qualquer" />
+                                <div class="option-content">
+                                    <span class="option-emoji">🌈</span>
+                                    <span class="option-text">Qualquer clima, o que importa é a experiência!</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q2: TIPO DE EXPERIÊNCIA -->
+                <div class="quiz-step" data-step="2" style="display: none;">
+                    <div class="quiz-question fade-up">
+                        <div class="question-icon">🎯</div>
+                        <h2>Qual tipo de experiência mais combina com você?</h2>
+                        <div class="options-grid">
+                            <label class="option-card">
+                                <input type="radio" name="tipo_viagem" value="aventura" />
+                                <div class="option-content">
+                                    <span class="option-emoji">🧗</span>
+                                    <span class="option-text">Aventura, ecoturismo e esportes radicais</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="tipo_viagem" value="enoturismo" />
+                                <div class="option-content">
+                                    <span class="option-emoji">🍷</span>
+                                    <span class="option-text">Enoturismo, vinícolas e alta gastronomia</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="tipo_viagem" value="romantica_charme" />
+                                <div class="option-content">
+                                    <span class="option-emoji">💕</span>
+                                    <span class="option-text">Romance alpino, fondues e charme europeu</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="tipo_viagem" value="relaxar" />
+                                <div class="option-content">
+                                    <span class="option-emoji">🧘</span>
+                                    <span class="option-text">Descanso total, spa e ar puro</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q3: ATIVIDADES FAVORITAS -->
+                <div class="quiz-step" data-step="3" style="display: none;">
+                    <div class="quiz-question fade-up">
+                        <div class="question-icon">🏃</div>
+                        <h2>O que você mais gostaria de fazer durante o dia?</h2>
+                        <div class="options-grid">
+                            <label class="option-card">
+                                <input type="radio" name="atividades" value="rafting_trilhas" />
+                                <div class="option-content">
+                                    <span class="option-emoji">🌊</span>
+                                    <span class="option-text">Rafting no rio, tirolesas e banho de cachoeira</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="atividades" value="degustacao_vinhos" />
+                                <div class="option-content">
+                                    <span class="option-emoji">🍇</span>
+                                    <span class="option-text">Degustação guiada de vinhos e piquenique</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="atividades" value="fondue_teleferico" />
+                                <div class="option-content">
+                                    <span class="option-emoji">🚠</span>
+                                    <span class="option-text">Passeio de teleférico, compras e noite do fondue</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="atividades" value="fotografia_natureza" />
+                                <div class="option-content">
+                                    <span class="option-emoji">📸</span>
+                                    <span class="option-text">Tirar fotos em belas paisagens e descansar</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q4: DURAÇÃO -->
+                <div class="quiz-step" data-step="4" style="display: none;">
+                    <div class="quiz-question fade-up">
+                        <div class="question-icon">📅</div>
+                        <h2>Qual a duração planejada para esta escapada?</h2>
+                        <div class="options-grid">
+                            <label class="option-card">
+                                <input type="radio" name="duracao" value="fim_de_semana" />
+                                <div class="option-content">
+                                    <span class="option-emoji">⚡</span>
+                                    <span class="option-text">Fim de semana bate-volta ou 2 dias</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="duracao" value="feriado" />
+                                <div class="option-content">
+                                    <span class="option-emoji">🗓️</span>
+                                    <span class="option-text">Feriado prolongado (3 a 4 dias)</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="duracao" value="semana" />
+                                <div class="option-content">
+                                    <span class="option-emoji">🏡</span>
+                                    <span class="option-text">Uma semana de férias completas</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="duracao" value="flexivel" />
+                                <div class="option-content">
+                                    <span class="option-emoji">🚗</span>
+                                    <span class="option-text">Totalmente flexível</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q5: ORÇAMENTO -->
+                <div class="quiz-step" data-step="5" style="display: none;">
+                    <div class="quiz-question fade-up">
+                        <div class="question-icon">💰</div>
+                        <h2>Qual faixa de investimento você planeja por pessoa?</h2>
+                        <div class="options-grid">
+                            <label class="option-card">
+                                <input type="radio" name="orcamento" value="economico_moderado" />
+                                <div class="option-content">
+                                    <span class="option-emoji">💵</span>
+                                    <span class="option-text">Acessível (R$ 600 a R$ 1.000)</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="orcamento" value="moderado_aventura" />
+                                <div class="option-content">
+                                    <span class="option-emoji">💳</span>
+                                    <span class="option-text">Equilibrado com passeios (R$ 1.000 a R$ 1.500)</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="orcamento" value="conforto_serrano" />
+                                <div class="option-content">
+                                    <span class="option-emoji">💎</span>
+                                    <span class="option-text">Confortável / Boutique (R$ 1.500 a R$ 2.500)</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="orcamento" value="premium_luxo" />
+                                <div class="option-content">
+                                    <span class="option-emoji">👑</span>
+                                    <span class="option-text">Luxo e Exclusividade (Acima de R$ 2.500)</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Q6: COMPANHIA -->
+                <div class="quiz-step" data-step="6" style="display: none;">
+                    <div class="quiz-question fade-up">
+                        <div class="question-icon">👥</div>
+                        <h2>Quem vai viajar com você?</h2>
+                        <div class="options-grid">
+                            <label class="option-card">
+                                <input type="radio" name="companhia" value="amigos_turma" />
+                                <div class="option-content">
+                                    <span class="option-emoji">👯</span>
+                                    <span class="option-text">Turma de amigos para curtir juntos</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="companhia" value="casal" />
+                                <div class="option-content">
+                                    <span class="option-emoji">💑</span>
+                                    <span class="option-text">Em casal (viagem a dois)</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="companhia" value="familia" />
+                                <div class="option-content">
+                                    <span class="option-emoji">👨‍👩‍👧‍👦</span>
+                                    <span class="option-text">Em família com crianças ou pais</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="companhia" value="solo" />
+                                <div class="option-content">
+                                    <span class="option-emoji">🚀</span>
+                                    <span class="option-text">Viajante solo / Ar livre</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="quiz-nav" id="quizNav" style="display: none;">
+                <button class="btn-secondary-custom" id="prevBtn" style="display: none;">← Pergunta Anterior</button>
+                <button class="btn-primary-custom" id="nextBtn">Próxima Pergunta →</button>
+            </div>
+
+            <!-- Result Display -->
+            <div class="quiz-result" id="quizResult" style="display: none;">
+                <div class="result-card glass-card fade-up">
+                    <div class="result-confetti">🎉</div>
+                    <h2>Seu Destino Ideal é...</h2>
+                    <div class="result-destination" id="resultDestination">
+                        <!-- Preenchido pelo JS dinamicamente (Brotas, São Roque ou Campos do Jordão) -->
+                    </div>
+                    <div class="result-actions" id="resultActions">
+                        <!-- Links dinâmicos -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-explorar">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">✈ <span>Explorar +</span></div>
+                <p>Especialistas em experiências de alta qualidade em Brotas, São Roque e Campos do Jordão.</p>
+                <div class="footer-social"><a href="#">📷</a><a href="#">📘</a><a href="#">💬</a><a href="#">▶️</a></div>
+            </div>
+            <div class="footer-col"><h4>Navegação</h4><a href="index.html">Início</a><a href="destinos.html">Destinos</a><a href="pacotes.html">Pacotes</a><a href="agendamentos.html">Agendamentos</a><a href="usuario.html">Área do Usuário</a></div>
+            <div class="footer-col"><h4>Suporte</h4><a href="#">Central de Ajuda</a><a href="#">Termos de Uso</a><a href="#">Privacidade</a></div>
+            <div class="footer-col"><h4>Contato</h4><a href="#">📍 São Paulo, SP</a><a href="#">📞 (11) 9 8765-4321</a><a href="#">✉️ contato@explorarmais.com.br</a></div>
+        </div>
+        <div class="footer-bottom"><span>© 2026 Explorar +. Todos os direitos reservados.</span><span>Feito com ❤️ para viajantes</span></div>
+    </footer>
+
+    <script src="../JS/main.js"></script>
+    <script src="../JS/questionario.js"></script>
+</body>
+</html>

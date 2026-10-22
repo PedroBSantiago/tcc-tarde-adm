@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Agende sua viagem para Brotas, São Roque ou Campos do Jordão com a Explorar +. Personalize datas, pacotes e opcionais." />
+    <title>Agendamentos & Reservas - Explorar +</title>
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/agendamentos.css" />
+</head>
+
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar-explorar">
+        <a href="index.html" class="nav-logo">
+            <div class="logo-icon">✈</div>
+            <span>Explorar +</span>
+        </a>
+        <div class="nav-menu">
+            <a href="index.html">Início</a>
+            <a href="destinos.html">Destinos</a>
+            <a href="pacotes.html">Pacotes</a>
+            <a href="agendamentos.html" class="active">Agendamentos</a>
+            <a href="questionario.html">Quiz</a>
+            <a href="pontuacao.html">Fidelidade</a>
+            <a href="usuario.html" class="nav-btn-outline">👤 Minha Conta</a>
+        </div>
+        <div class="nav-hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <main class="booking-page-wrapper">
+        <!-- Hero Header -->
+        <section class="booking-hero">
+            <div class="container-custom">
+                <div class="booking-hero-content fade-up">
+                    <div class="section-tag">Agendamentos & Viagens</div>
+                    <h1 class="section-title">Planeje e reserve sua <span class="highlight">próxima viagem</span></h1>
+                    <p class="section-subtitle">Escolha seu destino exclusivo no estado de SP: Brotas, São Roque ou Campos do Jordão. Cuidamos de cada detalhe.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Booking Flow Grid -->
+        <section class="booking-section">
+            <div class="container-custom">
+                <div class="booking-grid">
+                    
+                    <!-- Left Column: Step by Step Form -->
+                    <div class="booking-form-col fade-up">
+                        <form id="bookingForm" action="../php/agendar.php" method="POST">
+                            
+                            <!-- PASSO 1: SELEÇÃO DE DESTINO -->
+                            <div class="booking-step glass-card">
+                                <div class="step-badge-title">
+                                    <span class="step-badge">1</span>
+                                    <h3>Selecione o Destino</h3>
+                                </div>
+                                <p class="step-hint">Escolha uma de nossas experiências exclusivas:</p>
+
+                                <div class="dest-select-grid">
+                                    <!-- Destino 1: Brotas -->
+                                    <label class="dest-radio-card" data-dest="Brotas">
+                                        <input type="radio" name="destino" value="Brotas" checked />
+                                        <div class="dest-card-inner">
+                                            <div class="dest-card-img" style="background-image: url('https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=400');"></div>
+                                            <div class="dest-card-details">
+                                                <h4>Brotas</h4>
+                                                <span>Aventura & Ecoturismo</span>
+                                                <small class="dest-min-price">A partir de R$ 890</small>
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                    <!-- Destino 2: São Roque -->
+                                    <label class="dest-radio-card" data-dest="SaoRoque">
+                                        <input type="radio" name="destino" value="SaoRoque" />
+                                        <div class="dest-card-inner">
+                                            <div class="dest-card-img" style="background-image: url('https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?auto=compress&cs=tinysrgb&w=400');"></div>
+                                            <div class="dest-card-details">
+                                                <h4>São Roque</h4>
+                                                <span>Rota do Vinho & Gastronomia</span>
+                                                <small class="dest-min-price">A partir de R$ 650</small>
+                                            </div>
+                                        </div>
+                                    </label>
+
+                                    <!-- Destino 3: Campos do Jordão -->
+                                    <label class="dest-radio-card" data-dest="CamposDoJordao">
+                                        <input type="radio" name="destino" value="CamposDoJordao" />
+                                        <div class="dest-card-inner">
+                                            <div class="dest-card-img" style="background-image: url('https://images.pexels.com/photos/1486974/pexels-photo-1486974.jpeg?auto=compress&cs=tinysrgb&w=400');"></div>
+                                            <div class="dest-card-details">
+                                                <h4>Campos do Jordão</h4>
+                                                <span>Suíça Brasileira & Serra</span>
+                                                <small class="dest-min-price">A partir de R$ 1.150</small>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- PASSO 2: SELEÇÃO DE PACOTE -->
+                            <div class="booking-step glass-card">
+                                <div class="step-badge-title">
+                                    <span class="step-badge">2</span>
+                                    <h3>Escolha o Pacote</h3>
+                                </div>
+                                <p class="step-hint">Selecione o roteiro perfeito para a sua estadia:</p>
+
+                                <div class="package-select-list" id="packageListContainer">
+                                    <!-- Gerado dinamicamente de acordo com o destino selecionado -->
+                                </div>
+                            </div>
+
+                            <!-- PASSO 3: DATAS E VIAJANTES -->
+                            <div class="booking-step glass-card">
+                                <div class="step-badge-title">
+                                    <span class="step-badge">3</span>
+                                    <h3>Período e Viajantes</h3>
+                                </div>
+                                
+                                <div class="form-row-2">
+                                    <div class="form-group-custom">
+                                        <label for="dtPartida">Data de Partida 📅</label>
+                                        <input type="date" id="dtPartida" name="dt_partida" required />
+                                    </div>
+                                    <div class="form-group-custom">
+                                        <label for="dtRetorno">Data de Retorno 📅</label>
+                                        <input type="date" id="dtRetorno" name="dt_retorno" required />
+                                    </div>
+                                </div>
+
+                                <div class="travelers-counter-wrap">
+                                    <div class="travelers-info">
+                                        <span class="travelers-label">Número de Viajantes 👥</span>
+                                        <span class="travelers-desc">Adultos e crianças com vaga individual</span>
+                                    </div>
+                                    <div class="counter-ctrls">
+                                        <button type="button" class="btn-counter" id="btnMinusPeople">-</button>
+                                        <span class="counter-val" id="peopleCountDisplay">2</span>
+                                        <button type="button" class="btn-counter" id="btnPlusPeople">+</button>
+                                        <input type="hidden" name="nr_pessoas" id="nrPessoasInput" value="2" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- PASSO 4: OPCIONAIS EXCLUSIVOS -->
+                            <div class="booking-step glass-card">
+                                <div class="step-badge-title">
+                                    <span class="step-badge">4</span>
+                                    <h3>Serviços Adicionais (Opcionais)</h3>
+                                </div>
+
+                                <div class="extras-list">
+                                    <label class="extra-checkbox-item">
+                                        <input type="checkbox" id="extraSeguro" data-price="80" />
+                                        <div class="extra-info">
+                                            <strong>🛡️ Seguro Viagem Total (+ R$ 80 / pessoa)</strong>
+                                            <span>Cobertura completa para imprevistos e emergências médicas.</span>
+                                        </div>
+                                    </label>
+
+                                    <label class="extra-checkbox-item">
+                                        <input type="checkbox" id="extraTransfer" data-price="150" />
+                                        <div class="extra-info">
+                                            <strong>🚐 Transfer Executivo de São Paulo (+ R$ 150 / pessoa)</strong>
+                                            <span>Van executiva confortável com partida de pontos estratégicos de SP.</span>
+                                        </div>
+                                    </label>
+
+                                    <label class="extra-checkbox-item">
+                                        <input type="checkbox" id="extraGuia" data-price="120" />
+                                        <div class="extra-info">
+                                            <strong>⭐ Guia Turístico VIP Privativo (+ R$ 120 / grupo)</strong>
+                                            <span>Acompanhamento VIP com roteiros e curiosidades históricas exclusivas.</span>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="form-group-custom" style="margin-top: 1.5rem;">
+                                    <label for="dsObservacao">Observações ou Preferências Especiais</label>
+                                    <textarea id="dsObservacao" name="ds_observacao" rows="3" placeholder="Ex: Cama de casal, restrições alimentares, comemoração de aniversário..."></textarea>
+                                </div>
+                            </div>
+
+                            <input type="hidden" name="id_pacote" id="idPacoteInput" value="1" />
+                            <input type="hidden" name="vl_total" id="vlTotalInput" value="2580.00" />
+                            <input type="hidden" name="id_user" id="idUserInput" value="1" />
+                        </form>
+                    </div>
+
+                    <!-- Right Column: Sticky Summary & Checkout Card -->
+                    <div class="booking-summary-col">
+                        <div class="summary-card glass-card fade-up">
+                            <div class="summary-img-header" id="summaryHeaderImg" style="background-image: url('https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=600');">
+                                <span class="summary-badge-dest" id="summaryDestTag">Brotas</span>
+                            </div>
+
+                            <div class="summary-body">
+                                <h3 id="summaryPackageTitle">Brotas Aventura Radical</h3>
+                                <p class="summary-dest-name" id="summaryLocation">📍 Brotas, SP - Brasil</p>
+
+                                <div class="summary-specs">
+                                    <div class="spec-row">
+                                        <span>Período:</span>
+                                        <strong id="summaryDates">Selecione as datas</strong>
+                                    </div>
+                                    <div class="spec-row">
+                                        <span>Passageiros:</span>
+                                        <strong id="summaryPeople">2 Viajantes</strong>
+                                    </div>
+                                    <div class="spec-row">
+                                        <span>Hospedagem:</span>
+                                        <strong id="summaryHotel">Eco Resort</strong>
+                                    </div>
+                                </div>
+
+                                <div class="summary-divider"></div>
+
+                                <div class="summary-breakdown">
+                                    <div class="price-row">
+                                        <span id="labelPackageBase">Pacote (2x R$ 1.290,00)</span>
+                                        <span id="valPackageBase">R$ 2.580,00</span>
+                                    </div>
+                                    <div class="price-row" id="rowExtras" style="display: none;">
+                                        <span>Opcionais Adicionados</span>
+                                        <span id="valExtras">R$ 0,00</span>
+                                    </div>
+                                    <div class="price-row total-row">
+                                        <span>Valor Total</span>
+                                        <span class="total-highlight" id="valTotalDisplay">R$ 2.580,00</span>
+                                    </div>
+                                </div>
+
+                                <div class="loyalty-points-gain">
+                                    <span class="coin-icon">💎</span>
+                                    <div>
+                                        <strong>Você vai acumular:</strong>
+                                        <span class="points-gain-val" id="pointsGainDisplay">+2.580 Pontos Explorar</span>
+                                    </div>
+                                </div>
+
+                                <button type="button" class="btn-primary-custom btn-block" id="btnConfirmBooking">
+                                    ✨ Confirmar Reserva Agora
+                                </button>
+                                <p class="safe-checkout-note">🔒 Reserva segura e confirmação instantânea.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção: Meus Agendamentos Recentes -->
+        <section class="user-bookings-preview">
+            <div class="container-custom">
+                <div class="section-header fade-up">
+                    <div class="section-tag">Suas Viagens</div>
+                    <h2 class="section-title">Viagens recentemente <span class="highlight">agendadas</span></h2>
+                    <p class="section-subtitle">Consulte aqui os detalhes das suas reservas em Brotas, São Roque e Campos do Jordão</p>
+                </div>
+
+                <div class="recent-bookings-grid fade-up" id="recentBookingsList">
+                    <!-- Preenchido via agendamentos.js -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Sucesso de Reserva -->
+    <div class="modal-overlay" id="successBookingModal">
+        <div class="modal-box glass-card" style="text-align: center;">
+            <div style="font-size: 3.5rem; margin-bottom: 1rem;">🎉</div>
+            <h3 style="font-size: 1.6rem; color: #4ade80; margin-bottom: 0.5rem;">Reserva Efetuada com Sucesso!</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;" id="successModalMsg">
+                Sua viagem foi confirmada. Seus pontos de fidelidade já foram creditados na sua conta!
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <a href="usuario.html" class="btn-primary-custom">Ir para Minha Conta</a>
+                <button type="button" class="btn-secondary-custom" id="btnCloseSuccessModal">Continuar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-explorar">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">✈ <span>Explorar +</span></div>
+                <p>Especialistas nos melhores destinos do interior paulista: Brotas, São Roque e Campos do Jordão.</p>
+                <div class="footer-social"><a href="#">📷</a><a href="#">📘</a><a href="#">💬</a><a href="#">▶️</a></div>
+            </div>
+            <div class="footer-col"><h4>Navegação</h4><a href="index.html">Início</a><a href="destinos.html">Destinos</a><a href="pacotes.html">Pacotes</a><a href="agendamentos.html">Agendamentos</a><a href="questionario.html">Quiz</a></div>
+            <div class="footer-col"><h4>Suporte</h4><a href="#">Central de Ajuda</a><a href="#">Termos de Uso</a><a href="#">Privacidade</a></div>
+            <div class="footer-col"><h4>Contato</h4><a href="#">📍 São Paulo, SP</a><a href="#">📞 (11) 9 8765-4321</a><a href="#">✉️ contato@explorarmais.com.br</a></div>
+        </div>
+        <div class="footer-bottom"><span>© 2026 Explorar +. Todos os direitos reservados.</span><span>Feito com ❤️ para viajantes</span></div>
+    </footer>
+
+    <script src="../JS/main.js"></script>
+    <script src="../JS/agendamentos.js"></script>
+</body>
+
+</html>

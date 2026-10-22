@@ -1,63 +1,125 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - Explorar +</title>
-     <link rel="stylesheet" href="../css/cadastro.css">
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Crie sua conta na Explorar + e comece a planejar viagens inesquecíveis com pontos de boas-vindas." />
+    <title>Cadastro - Explorar +</title>
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/auth.css" />
 </head>
+
 <body>
-    <div class="container">
-      <div class="coll">
-        <form action="../php/insert_de_users.php" method="post">
-          <h1>Cadastro</h1>
-          <div class="mb-3">
-            <label for="name" class="form-label">Nome</label>
-            <input
-              type="name"
-              class="form-control"
-              name="nome"
-              aria-describedby="nameHelp"
-              required
-            />
-            <label for="email" class="form-label">Endereço de email</label>
-            <input
-              type="email"
-              class="form-control"
-              name="email"
-              aria-describedby="emailHelp"
-              required
-            />
-          </div>
-          <div class="mb-3" id="senhacont">
-            <label for="password" class="form-label">Senha</label>
-            <div class="campo-senha-container">
-            <input
-              type="password"
-              id="senhat"
-              class="form-control"
-              name="password"
-              minlength="8"
-              maxlength="20"
-              pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}"
-              title="A senha deve ter no mínimo 8 caracteres, incluindo letra maiúscula, letra minúscula, número e caractere especial."
-              required
-    
-            />
-            <button type="button" class="botaoquemostra" onclick="mostrarsenha()">👁</button>
+    <div class="page-loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <nav class="navbar-explorar">
+        <a href="index.html" class="nav-logo">
+            <div class="logo-icon">✈</div>
+            <span>Explorar +</span>
+        </a>
+        <div class="nav-menu">
+            <a href="index.html">Início</a>
+            <a href="destinos.html">Destinos</a>
+            <a href="pacotes.html">Pacotes</a>
+            <a href="agendamentos.html">Agendamentos</a>
+            <a href="questionario.html">Quiz</a>
+            <a href="pontuacao.html">Fidelidade</a>
+            <a href="login.html" class="nav-btn-outline">Entrar</a>
+            <a href="cadastro.html" class="nav-btn active">Cadastrar</a>
+        </div>
+        <div class="nav-hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <main class="auth-page">
+        <div class="auth-bg"></div>
+        <div class="auth-container">
+            <div class="auth-illustration fade-left">
+                <div class="auth-illustration-content">
+                    <div class="illustration-icon">🎉</div>
+                    <h2>Comece sua jornada<br />agora mesmo!</h2>
+                    <p>Crie sua conta e ganhe <strong>500 pontos</strong> de boas-vindas no nosso programa de fidelidade.</p>
+                    <div class="illustration-features">
+                        <div class="illust-feature">✓ Cadastro rápido e gratuito</div>
+                        <div class="illust-feature">✓ 500 pontos de boas-vindas</div>
+                        <div class="illust-feature">✓ Acesso a ofertas exclusivas</div>
+                        <div class="illust-feature">✓ Quiz personalizado de destinos</div>
+                    </div>
+                </div>
             </div>
-            <p>A senha deve ter no mínimo 8 caracteres, incluindo letra maiúscula, letra minúscula, número e caractere especial.</p>
-          </div>
-          <button class="btn btn-primary" type="submit">Cadastrar</button>
-          <a class="btn btn-primary" href="./login.html" role="button"
-            >Login</a
-          >
-          <script src="../JS/senha.js"></script>
+            <div class="auth-form-wrapper fade-right">
+                <div class="form-glass">
+                    <h1>Criar Conta</h1>
+                    <p class="form-subtitle">Junte-se à comunidade Explorar +</p>
+                    <form action="../php/insert_de_users.php" method="post" id="cadastroForm">
+                        <div class="form-group">
+                            <label for="nome">Nome completo</label>
+                            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(00) 9 0000-0000" />
+                        </div>
+                        <div class="form-group">
+                            <label for="nascimento">Data de nascimento</label>
+                            <input type="date" id="nascimento" name="nascimento" />
+                        </div>
+                        <div class="form-group">
+                            <label for="senhat">Senha</label>
+                            <div class="password-container">
+                                <input type="password" id="senhat" name="password" placeholder="Mínimo 8 caracteres" minlength="8" maxlength="20"
+                                    pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}"
+                                    title="A senha deve ter no mínimo 8 caracteres, incluindo letra maiúscula, letra minúscula, número e caractere especial."
+                                    required />
+                                <button type="button" class="password-toggle" onclick="mostrarsenha()">👁</button>
+                            </div>
+                            <small class="form-hint">Mínimo 8 caracteres com maiúscula, minúscula, número e caractere especial.</small>
+                        </div>
+                        <button type="submit" class="form-submit">Criar Conta →</button>
+                    </form>
+                    <div class="form-links">
+                        Já tem uma conta? <a href="login.html">Fazer login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../JS/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('cadastroForm');
+            if (form && window.location.protocol === 'file:') {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const nome = document.getElementById('nome').value;
+                    const email = document.getElementById('email').value;
+                    const tel = document.getElementById('telefone')?.value || '(11) 98765-4321';
+
+                    const newUser = {
+                        id: Date.now(),
+                        nome: nome,
+                        email: email,
+                        telefone: tel,
+                        pontos: 500
+                    };
+                    localStorage.setItem('explorar_user', JSON.stringify(newUser));
+                    alert('🎉 Parabéns! Conta criada com sucesso! Você ganhou 500 pontos de boas-vindas.');
+                    const params = new URLSearchParams(window.location.search);
+                    const target = params.get('redirect') || 'usuario.html';
+                    window.location.href = target;
+                });
+            }
+        });
+    </script>
 </body>
+
 </html>
