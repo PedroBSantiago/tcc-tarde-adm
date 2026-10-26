@@ -225,8 +225,17 @@ tcc-tarde-adm/
 - **Turma:** Tarde
 - **Projeto:** Explorar + Agência de Viagens & Turismo
 
+### 🎓 Integrantes do Grupo:
+- 👤 **Gabriel da Silva Rodrigues**
+- 👤 **Gabriela Carravieri Sena**
+- 👤 **Maria Eduarda dos Santos Nascimento**
+- 👤 **Maria Madalena Ferreira da Silva**
+- 👤 **Mariana Fernandes da Silva**
+- 👤 **Pedro Henrique Bertojna Santiago**
+
 ---
 
 <div align="center">
   <sub>Desenvolvido com dedicação acadêmica e excelência técnica para o TCC de Administração.</sub>
 </div>
+
