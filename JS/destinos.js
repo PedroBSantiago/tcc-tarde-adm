@@ -68,4 +68,32 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.textContent = btn.classList.contains('liked') ? '♥' : '♡';
         });
     });
+
+    // Atrações Filter
+    const atracaoFilterBtns = document.querySelectorAll('.atracao-filter-btn');
+    const atracaoCards = document.querySelectorAll('.atracao-card');
+
+    atracaoFilterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            atracaoFilterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const cidadeAlvo = btn.dataset.cidade;
+            let index = 0;
+
+            atracaoCards.forEach(card => {
+                const cidadeCard = card.dataset.cidade;
+                if (cidadeAlvo === 'todos' || cidadeCard === cidadeAlvo) {
+                    card.classList.remove('hidden');
+                    card.style.animation = 'slide-up 0.4s ease forwards';
+                    card.style.animationDelay = `${index * 0.05}s`;
+                    index++;
+                } else {
+                    card.classList.add('hidden');
+                    card.style.animation = '';
+                }
+            });
+        });
+    });
 });
+

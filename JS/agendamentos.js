@@ -9,73 +9,73 @@ document.addEventListener('DOMContentLoaded', () => {
 const DESTINATION_PACKAGES = {
     Brotas: {
         name: 'Brotas, SP',
-        img: 'https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=600',
+        img: 'https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=800&q=80',
         packages: [
             {
                 id: 1,
                 title: 'Brotas Aventura Radical',
                 desc: 'Rafting no Rio Jacaré-Pepira, tirolesas e almoço típico.',
-                price: 1290.00,
-                hotel: 'Eco Resort',
+                price: 1550.00,
+                hotel: 'Pousada Estalagem de Brotas',
                 duration: '3 dias / 2 noites',
-                img: 'https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=600'
+                img: 'https://images.unsplash.com/photo-1530866495561-507c9faab2ed?auto=format&fit=crop&w=800&q=80'
             },
             {
                 id: 2,
                 title: 'Brotas Ecoturismo & Relax',
                 desc: 'Nascente Areia que Canta, banho de cachoeira e spa.',
-                price: 980.00,
-                hotel: 'Pousada de Charme',
+                price: 1550.00,
+                hotel: 'Pousada Estalagem de Brotas',
                 duration: '2 dias / 1 noite',
-                img: 'https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=600'
+                img: 'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=800&q=80'
             }
         ]
     },
     SaoRoque: {
         name: 'São Roque, SP',
-        img: 'https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?auto=compress&cs=tinysrgb&w=600',
+        img: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=800&q=80',
         packages: [
             {
                 id: 3,
                 title: 'São Roque Rota do Vinho & Degustação',
                 desc: 'Tour completo pelas vinícolas, sommelier e almoço harmonizado.',
-                price: 890.00,
-                hotel: 'Pousada dos Vinhedos',
+                price: 771.00,
+                hotel: 'Villa Maior Hotel',
                 duration: '2 dias / 1 noite',
-                img: 'https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?auto=compress&cs=tinysrgb&w=600'
+                img: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=800&q=80'
             },
             {
                 id: 4,
-                title: 'São Roque Gastronômico & Romântico',
+                title: 'São Roque Romântico & Vinhos',
                 desc: 'Piquenique nos vinhedos, adegas históricas e hotel boutique.',
-                price: 1150.00,
-                hotel: 'Hotel Boutique Campestre',
+                price: 771.00,
+                hotel: 'Villa Maior Hotel',
                 duration: '3 dias / 2 noites',
-                img: 'https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=600'
+                img: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80'
             }
         ]
     },
     CamposDoJordao: {
         name: 'Campos do Jordão, SP',
-        img: 'https://images.pexels.com/photos/1486974/pexels-photo-1486974.jpeg?auto=compress&cs=tinysrgb&w=600',
+        img: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80',
         packages: [
             {
                 id: 5,
                 title: 'Campos do Jordão Inverno & Charme',
                 desc: 'Capivari, noite do fondue suíço e teleférico nas montanhas.',
-                price: 1850.00,
-                hotel: 'Hotel Boutique Europeu',
+                price: 1341.00,
+                hotel: 'Hotel Castelo Nacional Inn Campos do Jordão',
                 duration: '3 dias / 2 noites',
-                img: 'https://images.pexels.com/photos/1486974/pexels-photo-1486974.jpeg?auto=compress&cs=tinysrgb&w=600'
+                img: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80'
             },
             {
                 id: 6,
                 title: 'Campos do Jordão Mantiqueira Vip',
-                desc: 'Chalé de luxo com lareira, cervejarias artesanais e Pico do Itapeva.',
-                price: 2450.00,
-                hotel: 'Chalé de Luxo',
+                desc: 'Experiência em castelo com lareira, cervejarias artesanais e Pico do Itapeva.',
+                price: 1341.00,
+                hotel: 'Hotel Castelo Nacional Inn Campos do Jordão',
                 duration: '4 dias / 3 noites',
-                img: 'https://images.pexels.com/photos/2901209/pexels-photo-2901209.jpeg?auto=compress&cs=tinysrgb&w=600'
+                img: 'https://images.unsplash.com/photo-1585543805890-6051f7829f98?auto=format&fit=crop&w=800&q=80'
             }
         ]
     }
